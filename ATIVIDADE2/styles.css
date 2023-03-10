@@ -1,0 +1,45 @@
+body{
+    display: flex; 
+    justify-content: center;
+}
+
+.block{
+    position: absolute;
+    gap: 40px;
+    border: 1px solid black; 
+    padding: 100px;
+}
+.content{
+    display: flex;
+    border: 1px solid black; 
+    padding: 16px;
+}
+.firstblock{
+    display: flex;
+    flex-direction: column;
+}
+.secondblock{
+    display: flex;
+    flex-direction: column;
+}
+textarea{
+    padding:0;
+}
+#button{
+    margin-left: 30px;
+    margin-right: 30px;
+    padding-left: 25px;
+    padding-right: 25px;
+    height: 60px;
+
+    background-color: rgb(50, 50, 209);
+    color: white;
+    border-radius: 5px; 
+    border: none;
+}
+#name{
+    height: 100%;
+}
+#txt1{
+    padding: 30px;
+}
