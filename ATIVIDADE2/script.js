@@ -7,8 +7,10 @@ function IMCcalculator(){
         var IMC = input3.value / (input2.value * input2.value);
         if (isNaN(IMC)){
             document.getElementById("txt1").innerHTML = `Olá, ${input.value}\nSeu IMC ainda não foi informado`
+            document.getElementById("name").value = "";
         } else {
             document.getElementById("txt1").innerHTML = `Olá, ${input.value}\nSeu IMC é ${IMC.toFixed(2)}`
+            document.querySelector("#name").value = "";
         }
     } else {
         alert("Não digite numeros no campo de nome")
