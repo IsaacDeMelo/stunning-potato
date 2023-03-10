@@ -7,6 +7,7 @@ function splitName(){
     if (SplitChar.every(isNaN) && SplitSecondChar.every(isNaN)){
         document.getElementById("txt1").innerHTML = Split[0];
         document.getElementById("txt2").innerHTML = Split[1];
+        document.getElementById("name").value = "";
     } else {
         alert("Não digite numeros no Nome Completo.")
     }
