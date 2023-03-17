@@ -29,15 +29,20 @@ main {
     gap: 1vw;
 }
 #right{
-    position: absolute;
-    left: 35%;
     transform: scaleX(-1);
     z-index: 2;
 }
 #left{
-    position: absolute;
-  
+    
     z-index: 2;
+}
+.color-nav{
+    display: flex; 
+    justify-content: center;
+    
+}
+.color-nav p{
+    font-size: 20px;
 }
 .robotron {
     background: url(../img/estrutura.png) no-repeat;
@@ -123,7 +128,7 @@ main {
     padding-top: 8px;
 }
 
-.controle-ajuste {
+.controle-ajuste, .controle-ajuste- {
     display: inline-block;
     width: 40px;
     height: 40px;
@@ -240,4 +245,5 @@ main {
         height: 80vh;
         margin: 10vh auto;
     }
+    
 }

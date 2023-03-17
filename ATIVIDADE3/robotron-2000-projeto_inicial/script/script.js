@@ -1,4 +1,34 @@
 window.addEventListener("keyup", keyupHandler, false);
+var contadorAdiciona = Array.from(document.getElementsByClassName("controle-ajuste"))
+var contadorReduz = Array.from(document.getElementsByClassName("controle-ajuste-"))
+
+contadorAdiciona.forEach(element => {
+    element.addEventListener('click', function adiciona(){
+        if (element.nextElementSibling.value == "00"){
+            element.nextElementSibling.value = "00"
+        } else {
+            if (element.nextElementSibling.value == 10){
+                element.nextElementSibling.value = "00"
+            } else {
+                element.nextElementSibling.value -= 10;
+            }
+        }
+    })
+})
+
+contadorReduz.forEach(element => {
+    element.addEventListener('click', function reduz() {
+        if (element.previousElementSibling.value == "00") {
+            element.previousElementSibling.value = 10;
+        } else {
+            if (element.previousElementSibling.value < 100) {
+                element.previousElementSibling.value = Number(element.previousElementSibling.value) + 10;
+            } else {
+                element.previousElementSibling.value = 100;
+            }
+        }
+    })
+})
 
 var DIREITA = 39, ESQUERDA = 37; 
 
@@ -19,11 +49,11 @@ function keyupHandler(e){
             if (index > 0){
                 index--
             } else {
-                index = 5; 
+                index = cores.length - 1; 
             }
         break;
         case ESQUERDA:
-            if (index < 5){ 
+            if (index < cores.length - 1){ 
                 index++
             } else {
                 index = 0; 
@@ -31,21 +61,30 @@ function keyupHandler(e){
         break; 
     }
 }
+function upgradeBraço(){
+    
+}
+function downgradeBraço(){
+
+}
 function leftClick(){
-    if (index < 5){ 
+    console.log(index)
+    if (index < cores.length - 1){ 
         index++
     } else {
         index = 0; 
     }
 }
 function rightClick(){
+    console.log(index)
     if (index > 0){
         index--
     } else {
-        index = 5; 
+        index = cores.length - 1; 
     }
 }
 setInterval(() => {
     let robozao = document.getElementById("robo")
     robozao.setAttribute('src', `${cores[index]}`)
+    
 }, 1);
