@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <title></title>
+</head>
+<body>
+    <img id="mood" src="https://cdn-icons-png.flaticon.com/512/61/61412.png" width="50" height="50">
+    <form id="form">
+    <h1>Escola Virtual</h1>
+    <h2>Formulário Pré Matricula</h2>
+
+<div id="newbody" class="newBody">
+    <div id="Dados" class="DadosPessoais">
+        <div class="title">
+        <h2> - Dados Pessoais - </h2> 
+        </div>
+    <div id="place" class="place">
+        <div class="labels">
+            <b>Nome Completo</b>
+            <b>Nascimento (dd/mm/yyyy)</b>
+            <b>Nome da mãe</b>
+            <b>Nome do pai</b>
+            <b>Telefone</b>
+            <b>Email</b>
+        </div>
+        <div class="inputs">
+            <input type="text" id="nome" required="required">
+            <div class="data">
+                <input type="number" id="dia" required="required">
+                /
+                <input type="number" id="mês" required="required">
+                /
+                <input type="number" id="ano" required="required">
+            </div>
+            <input type="text" id="nomeDaMãe" required="required">
+            <input type="text" id="nomeDoPai" required="required">
+            <div class="telefone">
+                DDD (<input type="number" id="DDD" required="required">) Telefone <input type="number" id="Telefone" required> Ramal <input type="number" id="ramal" required>
+            </div>
+            <input type="email" id="email" required="required">
+    
+</div>
+</div>
+</div>
+    <div id="informações" class="InformaçõesDeMatricula">
+        <div class="title">
+            <h2> - Informações De Matricula - </h2>
+        </div>
+        <div class="info">
+        <div class="Serie">
+            Serie
+            <select required="required">
+                <option>pré-escolar</option>
+                <option>ensino fundamental</option>
+                <option>ensino médio</option>
+                <option>ensino superior</option>
+            </select>
+        </div>
+        <div class="Turno">
+            Turno
+            <div class="Manhã">
+                <input type="radio" name="nome" required> Manhã
+            </div>
+            <div class="Tarde">
+                <input type="radio" name="nome" required> Tarde
+            </div>
+        </div>
+        <div class="AtividadesExtracurriculares">
+            Atividades Extracurriculares
+            <div class="Informatica">
+                <input class="check" type="checkbox">
+                Informatica 
+            </div>
+            <div class="Música">
+                <input class="check" type="checkbox">
+                Música
+            </div>
+            <div class="Balet">
+                <input class="check" type="checkbox">
+                Balet
+            </div>
+            <div class="Pintura">
+                <input class="check" type="checkbox">
+                Pintura
+            </div>
+            <div class="Judô">
+                <input class="check" type="checkbox">
+                Judô
+            </div>
+            <div class="Futebol">
+                <input class="check" type="checkbox">
+                Futebol
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+<div class="buttons">
+<button id="submit" type="submit" >Enviar Formulario</button>
+
+<button id="clear" type="button" value="" onclick="Limpar()">Limpar Campos</button>
+</div>
+</form>
+</body>
+</html>

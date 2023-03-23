@@ -1,4 +1,4 @@
-window.addEventListener("keyup", keyupHandler, false);
+
 var contadorAdiciona = Array.from(document.getElementsByClassName("controle-ajuste"))
 var contadorReduz = Array.from(document.getElementsByClassName("controle-ajuste-"))
 
@@ -42,31 +42,6 @@ var cores = [
 
 var index = 0; 
 
-function keyupHandler(e){
-    
-    switch (e.keyCode){
-        case DIREITA:
-            if (index > 0){
-                index--
-            } else {
-                index = cores.length - 1; 
-            }
-        break;
-        case ESQUERDA:
-            if (index < cores.length - 1){ 
-                index++
-            } else {
-                index = 0; 
-            }
-        break; 
-    }
-}
-function upgradeBraço(){
-    
-}
-function downgradeBraço(){
-
-}
 function leftClick(){
     console.log(index)
     if (index < cores.length - 1){ 
