@@ -4,6 +4,7 @@ let onLight = true;
 let contador = 0;
 var dateValido = false;
 var DDDValido = false;
+var emailValido = false;
 var QTDerros = 0; 
 mood.addEventListener('click', changeMood, false)
 console.log(checkbox);
@@ -11,6 +12,7 @@ console.log(checkbox);
 document.forms['form'].onsubmit = function(){
     validaçãoDDD();
     validaçãoDate();
+    validaçãoEmail();
     Executor();
 }
 
@@ -64,6 +66,14 @@ function validaçãoDate(){
     }
 }
 
+function validaçãoEmail() {
+    let email = document.getElementById("email").split("");
+
+    if (email.includes(".")) {
+        emailValido = true;
+    }
+}
+
 // ÁREA DE VALIDAÇÃO DAS CHECKBOX. CADA VEZ QUE UMA CHECKBOX NÃO MARCADA É MARCADA, ADICIONA 1 VALOR AO CONTADOR
 // AO CHEGAR NO NUMERO 3, O CONTADOR NÃO PODERÁ SUBIR, E CASO ALGUMA CHECKBOX TENTAR SER MARCADA, A FUNÇÃO RETORNA PARA FALSE
 // CASO UMA DAS 3 MARCADAS FOR DESMARCADA, O CONTADOR IRÁ VOLTAR PARA 2, PERMITINDO COM QUE OUTRA SEJA MARCADA NO LUGAR DA ANTERIOR.
@@ -92,14 +102,22 @@ checkbox.forEach(element => {
 
 function Executor(){
     setTimeout(() => {       
-            if (DDDValido == false && dateValido == false){
-                alert('Existem 2 erros no formulário\nO DDD está invalido, e a Data está incorreta ou inexistente.\nRefaça o formulário')
-            } else if (DDDValido == true && dateValido == false){
-                alert('Existe 1 erro no formulário\nA Data está incorreta ou inexistente.\nRefaça o formulário')
-            } else if (DDDValido == false && dateValido == true){
+            if (DDDValido == false && dateValido == false && emailValido == false){
+                alert('Existem 3 erros no formulário\nO DDD está invalido, o email não possui ponto final, e a Data está incorreta ou inexistente.\nRefaça o formulário')
+            } else if (DDDValido == true && dateValido == false && emailValido == false){
+                alert('Existe 2 erros no formulário\nA Data está incorreta ou inexistente e o email não possui ponto final.\nRefaça o formulário')
+            } else if (DDDValido == false && dateValido == true && emailValido == false){
+                alert('Existe 2 erros no formulário\nO DDD está invalido e o email não possui ponto final.\nRefaça o formulário')
+            } else if (DDDValido == false && dateValido == false && emailValido == true){
+                alert('Existe 2 erros no formulário\nO DDD está invalido e a data está incorreta ou inexistente.\nRefaça o formulário')
+            } else if (DDDValido == true && dateValido == true && emailValido == false){
+                alert('Existe 1 erro no formulário\nO email não possui ponto final.\nRefaça o formulário')
+            } else if (DDDValido == false && dateValido == true && emailValido == true){
                 alert('Existe 1 erro no formulário\nO DDD está invalido.\nRefaça o formulário')
+            } else if (DDDValido == true && dateValido == false && emailValido == true){
+                alert('Existe 1 erro no formulário\nA Data está incorreta ou inexistente.\nRefaça o formulário')
             } else {
-                alert('Envio feito com sucesso');
+                alert('Envio concluido com sucesso')
             }
     }, 0);
 }
